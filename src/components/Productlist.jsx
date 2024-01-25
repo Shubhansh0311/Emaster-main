@@ -25,9 +25,7 @@ const Productlist = ({ sendProduct, addToCart }) => {
                                         {[...Array(showproduct.rating)].map(() =>
                                             <i className="bi bi-star-fill  rating-stars"></i>
                                         )}
-                                        {/* <i className="bi bi-star-fill  rating-stars"></i>
-                                        <i className="bi bi-star-fill  rating-stars"></i> */}
-
+                                  
 
                                     </span></p>
                                     {/*  */}
