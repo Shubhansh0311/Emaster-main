@@ -9,7 +9,7 @@ const ProductDetails=({product,addToCart})=>{
             <div class="col-md-4 product-large product_details_img">
                 <img class="img-fluid" src={`/images/${product.image}.jpg`}    alt=""/>
             </div>
-            <div class="col-md-2 product-small d-flex flex-row flex-md-column justify-content-start order-md-first ">
+            <div class="col-md-2 product-small d-flex flex-row flex-md-column justify-content-center justify-content-start order-md-first ">
                 <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
                 <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
                 <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
@@ -34,10 +34,14 @@ const ProductDetails=({product,addToCart})=>{
 
                 </div>
                 
-            <div className="text-center">
-                                        <a className="btn  w-100 addToCartBtn "  role="button" onClick={() => addToCart(product)}><i
-                                            className="bi bi-cart-plus-fill addToCartText" ></i><span className="text-light">Add To Cart</span></a>
+  
+
+                                    <div className="text-center">
+                                        <a className="btn btn-dark w-100 addToCartBtn "  role="button" onClick={() => addToCart(product)}><i
+                                            className="bi bi-cart-plus-fill" ></i>Add To Cart</a>
                                     </div>
+
+
                 <div class="details text-secondary">Details:
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">

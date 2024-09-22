@@ -64,7 +64,7 @@ const Cart = ({ AddItem, order,removeItem, cartQuantity }) => {
                     </div>
                     <div class="d-flex py-2 justify-content-between">
                         <span class="billing-item">Discount</span>
-                        <span class="billing-cost">₹{order.discount}</span>
+                        <span class="billing-cost">{order.discount}%</span>
                     </div>
                     <div class="d-flex py-2 justify-content-between">
                         <span class="billing-item">Total</span>
