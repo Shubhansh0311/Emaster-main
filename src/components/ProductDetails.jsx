@@ -5,26 +5,26 @@ const ProductDetails=({product,addToCart})=>{
 
     return(
         <div class="container mb-5">
-        <div class="row justify-conteznt-center d-flex flex-md-row m-3">
-            <div class="col-md-4 product-large">
+        <div class="row justify-center bg-light d-flex flex-md-row m-3 p-5">
+            <div class="col-md-4 product-large product_details_img">
                 <img class="img-fluid" src={`/images/${product.image}.jpg`}    alt=""/>
             </div>
             <div class="col-md-2 product-small d-flex flex-row flex-md-column justify-content-start order-md-first ">
-                <img class="img-fluid" src={`/images/${product.image}.jpg`} alt=""/>
-                <img class="img-fluid" src={`/images/${product.image}.jpg`} alt=""/>
-                <img class="img-fluid" src={`/images/${product.image}.jpg`} alt=""/>
+                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
+                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
+                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
             </div>
             <div class="col-md-6">
                 <h3 class="text-capitalize text-secondary">{product.brand}</h3>
                 <h1 class="fs-3">{product.name}</h1>
-                <h4 class="text-secondary fs-6 fw-bold">Price : ${product.price} </h4>
+                <h4 class="text-secondary fs-6 fw-bold">Price : ₹{product.price} </h4>
                 <div class="color text-secondary">Colors :</div>
                 <div class="py-2">
                     <div class="btn-group" role="group " aria-label="Basic radio toggle button group ">
-                        <input type="radio" class="btn-check " name="colors" id="red" autocomplete="off" checked={product.color=='red'} />
+                        <input type="radio" class="btn-check  " name="colors" id="red" autocomplete="off" checked={product.color=='red'} />
                         <label class="btn color-btn btn-danger" for="red"><i class="bi bi-check2"></i></label>
 
-                        <input type="radio" class="btn-check" name="colors" id="blue" autocomplete="off" checked={product.color=='black'}/>
+                        <input type="radio" class="btn-check btn-primary" name="colors" id="blue" autocomplete="off" checked={product.color=='black'}/>
                         <label class="btn  color-btn btn-primary" for="blue"><i class="bi bi-check2"></i></label>
 
                         <input type="radio" class="btn-check" name="colors" id="black" autocomplete="off" checked={product.color=='blue'}/>
@@ -34,9 +34,10 @@ const ProductDetails=({product,addToCart})=>{
 
                 </div>
                 
-                <div class="btn btn-primary w-100 bg-dark"  onClick={()=>addToCart(product)}>
-                    <i class="bi bi-cart-plus-fill " ></i>Add To Cart
-                </div>
+            <div className="text-center">
+                                        <a className="btn  w-100 addToCartBtn "  role="button" onClick={() => addToCart(product)}><i
+                                            className="bi bi-cart-plus-fill addToCartText" ></i><span className="text-light">Add To Cart</span></a>
+                                    </div>
                 <div class="details text-secondary">Details:
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">

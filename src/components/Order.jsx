@@ -10,12 +10,12 @@ const Orders = ({ AddItem, order }) => {
                     {AddItem.map(myItem =>
                         <div class="cart-item p-3   ">
                             <div class=" d-flex flex-row ">
-                                <img class="img-fluid col-2 py-2" src={`images/${myItem.image}.jpg`} alt="" />
+                                <img class="img-fluid col-2 py-2" src={`images/₹{myItem.image}.jpg`} alt="" />
                                 <div class="col-6">
                                     <h5>{myItem.brand}</h5>
                                     <h6>{myItem.name}</h6>
                                     <h6>Quantity: {myItem.quantity}</h6>
-                                    <p>Price : ${myItem.price}</p>
+                                    <p>Price : ₹{myItem.price}</p>
                                     <div class="d-flex">
                                         <input type="radio" class="bg-danger" name="color" id="red" />RED
                                         <input type="radio" class="bg-primary" name="color" id="blue" />BLUE

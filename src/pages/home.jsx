@@ -1,51 +1,39 @@
-import Productlist from "../components/Productlist"
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'; // Importing necessary hooks from Redux
+import Productlist from "../components/Productlist";
 import FooterItem from "../components/Footer";
 import Navbar from "../components/Navbar";
 import CarouselItem from "../components/Carousel";
+import { ADD_TO_CART_AC, initializeProductsAC } from "../action"; // Adjust your action imports accordingly
 
-//to access the data of the reducer 
-import { useDispatch, useSelector } from 'react-redux';// by this we can use particular element of any component
-
-
-
-//useDispatched for state to props
-//useselector for maps to props
-
-
-
-import { ADD_TO_CART_AC, INIT_PRODUCT_AC, initializeProductsAC } from "../action";
-import { useEffect } from "react";
 const Home = () => {
-    const useProduct = useSelector((store) => store.productItem.Product)
+    const dispatch = useDispatch();
+    
+    // Accessing products from the Redux store
+    const products = useSelector((store) => store.productItem.Product);
+    
+    // Accessing cart items from the Redux store
+    const cartProduct = useSelector((store) => store.cartItem.item);
 
-    let dispatch = useDispatch();
+    // Fetching products when the component mounts
     useEffect(() => {
-        dispatch(initializeProductsAC())
-    }, [])
+        dispatch(initializeProductsAC());
+    }, [dispatch]); // Including dispatch in the dependency array
 
-
-
-
-
-    // for cart functionality
+    // Function to add product to cart
     const addToCart = (AddToCartProduct) => {
-        dispatch(ADD_TO_CART_AC(AddToCartProduct))
-    }
-    const cartProduct = useSelector((store) => store.cartItem.item)
-    // console.log(addToCart.length);
+        dispatch(ADD_TO_CART_AC(AddToCartProduct));
+    };
 
-    //backend
     return (
         <>
-            {/* the cart count here is passed to navbar.jsx */}
-            {/* ny this we get the length of the array  */}
+            {/* The cart count is passed to Navbar */}
             <Navbar cartCount={cartProduct.length} />
             <CarouselItem />
-            <Productlist sendProduct={useProduct} addToCart={addToCart} />
+            <Productlist sendProduct={products} addToCart={addToCart} />
             <FooterItem />
         </>
+    );
+};
 
-
-    )
-}
 export default Home;

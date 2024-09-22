@@ -12,7 +12,8 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
         }
     }
     return (
-        <div class="container mb-5">
+        <div class="container ">
+            <div  style={{background:"white"}} className="p-4 m-5 ">
             <div class="py-5 text-center">
 
                 <h2>Checkout</h2>
@@ -30,27 +31,34 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                                 <h6 class="my-0">Total</h6>
                                 <small class="text-muted">cart item</small>
                             </div>
-                            <span class="text-muted">${order.totalCost}</span>
+                            <span class="text-muted">₹{order.totalCost}</span>
                         </li>
 
                         <li class="list-group-item d-flex justify-content-between bg-light">
                             <div class="text-success">
                                 <h6 class="my-0">Shipping Charge</h6>
                             </div>
-                            <span class="text-success">${order.shipping}</span>
+                           {order>0?( <span class="text-success">₹{order.shipping}</span>):"₹0"}
                         </li>
                         <li class="list-group-item d-flex justify-content-between bg-light">
                             <div class="text-secondary">
                                 <h6 class="my-0">total</h6>
                                 <strong class="text-success">discount</strong>
                             </div>
-                            <span class="text-success">${order.totalCost * order.discount / 100}</span>
+                            <span class="text-success">₹{order.totalCost * order.discount / 100}</span>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total </span>
-                            <strong>${order.totalCost + order.shipping - order.totalCost * order.discount / 100}</strong>
-                        </li>
+                        <li className="list-group-item d-flex justify-content-between">
+    <span>Total </span>
+    {order>0 ? (
+        <strong>
+            ₹{order.totalCost + order.shipping - (order.totalCost * order.discount) / 100}
+        </strong>
+    ) : (
+        <strong>₹0</strong>
+    )}
+</li>
+
                     </ul>
 
 
@@ -133,7 +141,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                         <div class="row">
                             <div class="col-md-5 mb-3">
                                 <label for="country">Country</label>
-                                <select class="custom-select d-block w-100" id="country" required="" fdprocessedid="7uhwoq" value={address.country} onChange={e => setAddress({ ...address, country: e.target.value })}>
+                                <select class="custom-select d-block w-100 form-control" id="country" required="" fdprocessedid="7uhwoq" value={address.country} onChange={e => setAddress({ ...address, country: e.target.value })}>
                                     <option value="">Choose...</option>
                                     <option>USA</option>
                                     <option>India</option>
@@ -148,7 +156,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="state">State</label>
-                                <select class="custom-select d-block w-100" id="state" required="" fdprocessedid="7kucws" value={address.state} onChange={e => setAddress({ ...address, state: e.target.value })}>
+                                <select class="custom-select d-block w-100 form-control" id="state" required="" fdprocessedid="7kucws" value={address.state} onChange={e => setAddress({ ...address, state: e.target.value })}>
                                     <option value="">Choose...</option>
                                     <option>MP</option>
                                     <option>UP</option>
@@ -172,10 +180,11 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
 
                         <button class="btn btn-primary btn-lg btn-block flex col-12" type="submit"
                             fdprocessedid="h0gg9n">Add Address</button>
-                        <button class="btn btn-success mt-4 btn-lg btn-block flex col-12" onClick={e => placeOrder()}
+                        <button class="btn btn-success mt-4 btn-lg btn-block flex col-12 w-100" onClick={e => placeOrder()}
                             fdprocessedid="h0gg9n">Continue to Checkout</button>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     )

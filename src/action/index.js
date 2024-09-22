@@ -56,10 +56,10 @@ export const CHANGE_ORDER_CART_AC = (ordercart) => {
 export const ADD_TO_CART_AC = (product) => {
   return function (dispatch) {
 
-    axios.post('http://localhost:800/cart', { item: product }).then(function (response) {
-      console.log(response)
-      // dispatch({ type: INIT_PRODUCTS, payload:response.data })
-    }).catch(function (error) { console.log(error); })
+    // axios.post('http://localhost:800/cart', { item: product }).then(function (response) {
+    //   console.log(response)
+    //   // dispatch({ type: INIT_PRODUCTS, payload:response.data })
+    // }).catch(function (error) { console.log(error); })
 
     dispatch({ type: ADD_TO_CART, payload: product })
   }
@@ -97,7 +97,7 @@ export const EMPTY_CART_AC = (emptyCart) => {
 }
 export const REMOVE_ITEM_AC = (removeItem) => {
   return function (dispatch) {
-    dispatch({ type: REMOVE_ITEM, payload: removeItem })
+    dispatch({ type: REMOVE_ITEM, payload: {item:removeItem} })
   }
 
 }

@@ -18,7 +18,7 @@ const ProductDetailPage = () => {
     let {productID}=useParams();
     // console.log(productID);
     const products=useSelector(state=>state.productItem.Product)
-    const product=products.find(p=>p._id===productID)
+    const product=products.find(p=>p.id==productID)
         console.log(products);
     // console.log(product);//❗this product contains all the data 
     // console.log(product);
