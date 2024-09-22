@@ -50,7 +50,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
 
                         <li className="list-group-item d-flex justify-content-between">
     <span>Total </span>
-    {order>0 ? (
+    {order!=null ? (
         <strong>
             ₹{order.totalCost + order.shipping - (order.totalCost * order.discount) / 100}
         </strong>
