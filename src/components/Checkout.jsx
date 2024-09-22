@@ -38,7 +38,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                             <div class="text-success">
                                 <h6 class="my-0">Shipping Charge</h6>
                             </div>
-                           {order>0?( <span class="text-success">₹{order.shipping}</span>):"₹0"}
+                           {order!=null?( <span class="text-success">${order.shipping}</span>):"₹0"}
                         </li>
                         <li class="list-group-item d-flex justify-content-between bg-light">
                             <div class="text-secondary">
