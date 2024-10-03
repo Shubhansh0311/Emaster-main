@@ -30,7 +30,7 @@ const ProductDetailPage = () => {
 
     const cartProduct = useSelector((store) => store.cartItem.item)
 
-   
+
 
 
     // add cart  functionality
@@ -38,6 +38,7 @@ const ProductDetailPage = () => {
     const addToCart = (AddToCartProduct) => {
         dispatch(ADD_TO_CART_AC(AddToCartProduct))
     }
+    
 
 
     return (<>

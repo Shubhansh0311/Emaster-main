@@ -8,9 +8,9 @@ const Orders = ({ AddItem, order }) => {
             <div class="d-flex row flex-column m-2 justify-content-start flex-md-row align-items-start  ">
                 <div class="col-md-11 mx-md-2 p-0 ">
                     {AddItem.map(myItem =>
-                        <div class="cart-item p-3   ">
+                        <div class="cart-item p-3 mb-2  ">
                             <div class=" d-flex flex-row ">
-                                <img class="img-fluid col-2 py-2" src={`images/₹{myItem.image}.jpg`} alt="" />
+                                <img class="img-fluid col-2 py-2 product_details_img " src={`images/${myItem.image}.jpg`} alt="" />
                                 <div class="col-6">
                                     <h5>{myItem.brand}</h5>
                                     <h6>{myItem.name}</h6>

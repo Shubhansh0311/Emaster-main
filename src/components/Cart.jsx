@@ -11,7 +11,7 @@ const Cart = ({ AddItem, order,removeItem, cartQuantity }) => {
                 <div class="col-md-7 mx-md-2 p-0 ">
                     
                     {AddItem.map(myItem =>
-                        <div class="cart-item p-3   ">
+                        <div class="cart-item p-3  mb-2 ">
                             <div class=" d-flex flex-row ">
                                 <img class="img-fluid col-2 py-2" src={`images/${myItem.image}.jpg`} alt="" />
                                 <div class="col-6">
