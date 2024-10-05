@@ -14,8 +14,8 @@ const Orders = ({ AddItem, order }) => {
                                 />
                                 <div className="col-12 col-md-8 d-flex flex-column justify-content-between">
                                     <div>
-                                        <h5 className="bolder Capitalize">{myItem.brand}</h5>
-                                        <h6 className="Capitalize">{myItem.name}</h6>
+                                        <h5 className="bolder capitalize">{myItem.brand}</h5>
+                                        <h6 className="capitalize">{myItem.name}</h6>
                                         <h6>Quantity: {myItem.quantity}</h6>
                                         <p className="bolder">Price: ₹{myItem.price}</p>
                                         <div className="d-flex gap-1">
