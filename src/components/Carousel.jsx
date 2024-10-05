@@ -3,30 +3,31 @@ const CarouselItem = () => {
         <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
 
             <div className="carousel-inner ">
-                <div className="carousel-item active" data-bs-interval="3000">
-                    <img style={{padding:'10px'}} src="carouselimg/pic1.jpeg" className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Timeless Elegance </h5>
-                            <p>Elevate your style with our exquisite collection of luxury watches</p>
-                        </div>
-                </div>
+               
                 
-                <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic2.jpeg" className="d-block w-100" alt="..."/>
+                <div className="carousel-item active " data-bs-interval="3000">
+                    <img style={{padding:'10px'}} src="carouselimg/pic1.jpeg" className="d-block w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
                             <h5>Time with Perfection</h5>
                             <p>See the latest trending and luxuries watch at your comfort</p>
                         </div>
                 </div>
+                <div className="carousel-item " data-bs-interval="3000">
+                    <img style={{padding:'10px'}} src="carouselimg/pic2.jpeg" className="d-block w-100" alt="..."/>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5>Timeless Elegance </h5>
+                            <p>Elevate your style with our exquisite collection of luxury watches</p>
+                        </div>
+                </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic3.jpeg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic3.jpeg" className="d-block w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
                             <h5>Classic Charm</h5>
                             <p>Rediscover the art of watchmaking with our timeless classics</p>
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic4.jpeg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic4.jpeg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>The art of being unique
                             </h5>
@@ -34,28 +35,28 @@ const CarouselItem = () => {
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic7.jpg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic7.jpg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Time to Evolve</h5>
                             <p>Find your perfect everyday watch that blends functionality with style</p>
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic5.jpg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic5.jpg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Watches for Lifetime</h5>
                             <p>Embrace simplicity with our sleek and minimalist watch designs</p>
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic6.jpg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic6.jpg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Stay Ahead of Time</h5>
                             <p>Explore the latest trends in watch design and functionality</p>
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic8.jpg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic8.jpg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Own a Piece of Art</h5>
                             <p> Discover our limited edition watches that blend craftsmanship and exclusivity</p>
