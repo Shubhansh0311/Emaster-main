@@ -5,8 +5,8 @@ const CarouselItem = () => {
             <div className="carousel-inner ">
                
                 
-                <div className="carousel-item active " data-bs-interval="3000">
-                    <img style={{padding:'10px'}} src="carouselimg/pic1.jpeg" className="d-block w-100" alt="..."/>
+                <div className="carousel-item  active " data-bs-interval="3000">
+                    <img style={{padding:'10px'}} src="carouselimg/pic1.jpeg" className="d-block carousel1 h-sm-[250px] w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
                             <h5>Time with Perfection</h5>
                             <p>See the latest trending and luxuries watch at your comfort</p>

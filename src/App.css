@@ -386,6 +386,9 @@ color: white;
   .product-small img{
     max-width: 90px;
   }
+  .carousel1{
+    height: 256px !important;
+  }
   .footer-direction {
     flex-direction: column;
   }
