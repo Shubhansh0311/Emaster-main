@@ -24,9 +24,9 @@ const Productlist = ({ sendProduct, addToCart }) => {
                             </div>
                             <div className="card-body d-flex flex-column justify-content-between">
                                 <div>
+                                    <h5 className="card-title bold">{showproduct.brand}</h5>
                                     <h6 className="card-subtitle mb-1 text-muted">{showproduct.name}</h6>
-                                    <h5 className="card-title">{showproduct.brand}</h5>
-                                    <p className="card-text">
+                                    <p className="card-text bold">
                                         ₹{showproduct.price}
                                         <span className="float-end">
                                             {[...Array(showproduct.rating)].map((_, index) => (
