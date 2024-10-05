@@ -21,7 +21,7 @@ const Cart = ({ AddItem, order, removeItem, cartQuantity }) => {
                                     </div>
                                     <div className="col-12 col-md-5 d-flex flex-column justify-content-between">
                                         <div>
-                                            <h5 className="mb-1 bolder">{myItem.brand}</h5>
+                                            <h5 className="mb-1 fw-bold">{myItem.brand}</h5>
                                             <h6 className="mb-2">{myItem.name}</h6>
                                             <div className="d-flex align-items-center justify-content-start mb-2">
                                                 <h6 className="me-2">Quantity:</h6>
@@ -35,7 +35,7 @@ const Cart = ({ AddItem, order, removeItem, cartQuantity }) => {
                                                     <option value="3">3</option>
                                                 </select>
                                             </div>
-                                            <p className="mb-0 bolder">Price: <strong>₹{myItem.price}</strong></p>
+                                            <p className="mb-0 fw-bold">Price: <strong>₹{myItem.price}</strong></p>
                                             <div className="d-flex flex-wrap gap-1 mb-2">
                                                 <input type="radio" name={`color-${myItem.id}`} id={`red-${myItem.id}`} />
                                                 <label htmlFor={`red-${myItem.id}`}>RED</label>
