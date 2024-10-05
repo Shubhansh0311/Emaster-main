@@ -14,10 +14,10 @@ const Orders = ({ AddItem, order }) => {
                                 />
                                 <div className="col-12 col-md-8 d-flex flex-column justify-content-between">
                                     <div>
-                                        <h5>{myItem.brand}</h5>
+                                        <h5 className="bold">{myItem.brand}</h5>
                                         <h6>{myItem.name}</h6>
                                         <h6>Quantity: {myItem.quantity}</h6>
-                                        <p>Price: ₹{myItem.price}</p>
+                                        <p className="bold">Price: ₹{myItem.price}</p>
                                         <div className="d-flex gap-1">
                                             <input type="radio" className="bg-danger" name={`color-${myItem.id}`} id={`red-${myItem.id}`} />
                                             <label htmlFor={`red-${myItem.id}`}>RED</label>
