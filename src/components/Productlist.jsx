@@ -6,7 +6,7 @@ const Productlist = ({ sendProduct, addToCart }) => {
             <div className="row">
                 {sendProduct.map((showproduct) => (
                     <div key={showproduct.id} className="col-xl-3 col-md-4 col-sm-6 mb-4">
-                        <div className="card h-100 shadow-lg rounded" style={glassEffectStyle}>
+                        <div className="card h-100 shadow-lg rounded" >
                             <div className="position-relative">
                                 <Link to={`product/${showproduct.id}`}>
                                     <div className="image-container">
@@ -51,13 +51,7 @@ const Productlist = ({ sendProduct, addToCart }) => {
 };
 
 // Glass effect style
-const glassEffectStyle = {
-    background: "rgb(195 197 210 / 90%)",
-    backdropFilter:  "blur(15px)",
-    border: "1px solid rgba(255, 255, 255, 0.5)",
-    borderRadius: '10px',
-    position: 'relative',
-};
+
 
 
 

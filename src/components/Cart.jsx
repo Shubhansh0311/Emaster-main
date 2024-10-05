@@ -35,7 +35,7 @@ const Cart = ({ AddItem, order, removeItem, cartQuantity }) => {
                                                     <option value="3">3</option>
                                                 </select>
                                             </div>
-                                            <p className="mb-0">Price: <strong>${myItem.price}</strong></p>
+                                            <p className="mb-0">Price: <strong>₹{myItem.price}</strong></p>
                                             <div className="d-flex flex-wrap gap-1 mb-2">
                                                 <input type="radio" name={`color-${myItem.id}`} id={`red-${myItem.id}`} />
                                                 <label htmlFor={`red-${myItem.id}`}>RED</label>
@@ -74,19 +74,19 @@ const Cart = ({ AddItem, order, removeItem, cartQuantity }) => {
                                 </div>
                                 <div className="py-1 d-flex justify-content-between">
                                     <span className="billing-item" style={{ fontSize: '0.9rem' }}>Item Cost</span>
-                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${order.totalCost.toFixed(2)}</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>₹{order.totalCost.toFixed(2)}</span>
                                 </div>
                                 <div className="py-1 d-flex justify-content-between">
                                     <span className="billing-item" style={{ fontSize: '0.9rem' }}>Ship</span>
-                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${order.shipping.toFixed(2)}</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>₹{order.shipping.toFixed(2)}</span>
                                 </div>
                                 <div className="py-1 d-flex justify-content-between">
                                     <span className="billing-item" style={{ fontSize: '0.9rem' }}>Discount</span>
-                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${order.discount.toFixed(2)}</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>₹{order.discount.toFixed(2)}</span>
                                 </div>
                                 <div className="py-1 d-flex justify-content-between">
                                     <span className="billing-item" style={{ fontSize: '0.9rem' }}>Total</span>
-                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${(order.totalCost + order.shipping - (order.discount * order.totalCost / 100)).toFixed(2)}</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>₹{(order.totalCost + order.shipping - (order.discount * order.totalCost / 100)).toFixed(2)}</span>
                                 </div>
                             </div>
                             <Link to="/checkout.html" className="button btn py-2 btn-primary mt-4">Buy-now</Link>
