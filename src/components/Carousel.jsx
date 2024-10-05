@@ -4,7 +4,7 @@ const CarouselItem = () => {
 
             <div className="carousel-inner ">
                 <div className="carousel-item active" data-bs-interval="3000">
-                    <img src="carouselimg/pic1.jpg" className="d-block w-100" alt="..."/>
+                    <img style={{padding:'10px'}} src="carouselimg/pic1.jpeg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>Timeless Elegance </h5>
                             <p>Elevate your style with our exquisite collection of luxury watches</p>
@@ -12,21 +12,21 @@ const CarouselItem = () => {
                 </div>
                 
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic2.jpg" className="d-block w-100" alt="..."/>
+                    <img src="carouselimg/pic2.jpeg" className="d-block w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
                             <h5>Time with Perfection</h5>
                             <p>See the latest trending and luxuries watch at your comfort</p>
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic3.jpg" className="d-block w-100" alt="..."/>
+                    <img src="carouselimg/pic3.jpeg" className="d-block w-100" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
                             <h5>Classic Charm</h5>
                             <p>Rediscover the art of watchmaking with our timeless classics</p>
                         </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="3000">
-                    <img src="carouselimg/pic4.jpg" className="d-block w-100" alt="..."/>
+                    <img src="carouselimg/pic4.jpeg" className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
                             <h5>The art of being unique
                             </h5>

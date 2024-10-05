@@ -13,7 +13,7 @@ const Cart = ({ AddItem, order,removeItem, cartQuantity }) => {
                     {AddItem.map(myItem =>
                         <div class="cart-item p-3  mb-2 ">
                             <div class=" d-flex flex-row ">
-                                <img class="img-fluid col-2 py-2" src={`images/${myItem.image}.jpg`} alt="" />
+                                <img class="img-fluid col-2 py-2" src={`images/${myItem.image}.jpeg`} alt="" />
                                 <div class="col-6">
                                     <h5>{myItem.brand}</h5>
                                     <h6>{myItem.name}</h6>

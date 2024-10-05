@@ -56,8 +56,8 @@ html, body {
 
 /* image sizing */
 img {
-  width: 306px;
-padding:15px;
+  /* width: 306px; */
+padding:50px 10px 20px 35px;
   height: 260px;
 }
 

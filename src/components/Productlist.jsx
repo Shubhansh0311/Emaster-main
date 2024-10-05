@@ -14,10 +14,12 @@ const Productlist = ({ sendProduct, addToCart }) => {
 
                                 <i className="bi  bi-heart-fill liked  position-absolute"></i>
                                 <i className="bi  bi-heart like position-absolute "></i>
-                                <Link to={`product/${showproduct.id}`}> 
-                                    <img src={`images/${showproduct.image}.jpg`} data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="click to know more " className="card-img-top" alt="..." />
+                               <div className="w-full ">
+                               <Link to={`product/${showproduct.id}`}> 
+                                    <img src={`images/${showproduct.image}.jpeg`} data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="click to know more " className="" alt="..." />
                                 </Link>
+                               </div>
                                 <div className="card-body">
                                     <h6 className="card-subtitle mb-2 text-muted">{showproduct.name}</h6>
                                     <h5 className="card-title">{showproduct.brand}</h5>
@@ -31,7 +33,7 @@ const Productlist = ({ sendProduct, addToCart }) => {
                                     {/*  */}
                                     <div className="text-center">
                                         <a className="btn btn-dark w-100 addToCartBtn "  role="button" onClick={() => addToCart(showproduct)}><i
-                                            className="bi bi-cart-plus-fill" ></i>Add To Cart</a>
+                                           style={{position:"relative",bottom:'2px'}} className="bi px-1  bi-cart-plus-fill" ></i>Add To Cart</a>
                                     </div>
                                 </div>
                             </div>

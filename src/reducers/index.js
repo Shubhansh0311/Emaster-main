@@ -12,8 +12,8 @@ export const INIT_PRODUCTS = "INIT_PRODUCTS";
 // Initial product state
 const initialProduct = {
     Product: [
-        { id: 1, name: "watch1", brand: "boat", price: 1000, image: "watch1", rating: 2, color: 'red' },
-        { id: 2, name: "watch2", brand: "boatx", price: 2000, image: "watch2", rating: 3, color: 'green' },
+        { id: 1, name: "watch1", brand: "boat", price: 1000, image: "watch1", rating: 4, color: 'red' },
+        { id: 2, name: "watch2", brand: "boatx", price: 2000, image: "watch2", rating: 4, color: 'green' },
         { id: 3, name: "watch3", brand: "boaty", price: 3000, image: "watch3", rating: 4, color: 'black' },
         { id: 4, name: "watch4", brand: "boatz", price: 4000, image: "watch4", rating: 4, color: 'red' },
         { id: 5, name: "watch5", brand: "boatA", price: 5000, image: "watch5", rating: 4, color: 'green' },
@@ -75,7 +75,7 @@ const CartReducer = (state = initialCart, action) => {
             return { ...state, item: updatedItems };
 }
 case REMOVE_ITEM: {
-    console.log(action.payload.item.id);
+    // console.log(action.payload.item.id);
     
     return {
         ...state,

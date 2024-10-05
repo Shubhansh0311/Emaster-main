@@ -7,12 +7,12 @@ const ProductDetails=({product,addToCart})=>{
         <div class="container mb-5">
         <div class="row justify-center bg-light d-flex flex-md-row m-3 p-5">
             <div class="col-md-4 product-large product_details_img">
-                <img class="img-fluid" src={`/images/${product.image}.jpg`}    alt=""/>
+                <img class="img-fluid" src={`/images/${product.image}.jpeg`}    alt=""/>
             </div>
             <div class="col-md-2 product-small d-flex flex-row flex-md-column justify-content-center justify-content-start order-md-first ">
-                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
-                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
-                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpg`} alt=""/>
+                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpeg`} alt=""/>
+                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpeg`} alt=""/>
+                <img class="img-fluid product_details_img" src={`/images/${product.image}.jpeg`} alt=""/>
             </div>
             <div class="col-md-6">
                 <h3 class="text-capitalize text-secondary">{product.brand}</h3>
@@ -38,7 +38,7 @@ const ProductDetails=({product,addToCart})=>{
 
                                     <div className="text-center">
                                         <a className="btn btn-dark w-100 addToCartBtn "  role="button" onClick={() => addToCart(product)}><i
-                                            className="bi bi-cart-plus-fill" ></i>Add To Cart</a>
+                                         style={{position:"relative",bottom:'2px',padding:"0px 2px"}}    className="bi bi-cart-plus-fill" ></i>Add To Cart</a>
                                     </div>
 
 
