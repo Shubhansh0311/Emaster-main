@@ -13,9 +13,9 @@ const ProductDetails = ({ product, addToCart }) => {
                     <img className="img-fluid product_details_img" src={`/images/${product.image}.png`} alt="" />
                 </div>
                 <div className="col-md-6">
-                    <h3 className="text-capitalize text-secondary bold">{product.brand}</h3>
+                    <h3 className="text-capitalize text-secondary bolder">{product.brand}</h3>
                     <h1 className="fs-3">{product.name}</h1>
-                    <h4 className="text-secondary fs-6 fw-bold bold">Price: ₹{product.price}</h4>
+                    <h4 className="text-secondary fs-6 fw-bold bolder">Price: ₹{product.price}</h4>
                     <div className="color text-secondary">Colors:</div>
                     <div className="py-2">
                         <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
