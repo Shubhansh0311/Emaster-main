@@ -1,81 +1,101 @@
 import { Link } from "react-router-dom";
 
-const Cart = ({ AddItem, order,removeItem, cartQuantity }) => {
-    // const TotalCost=order.items.reduce((total,item)=>total+item.price*item.quantity,0);
-
+const Cart = ({ AddItem, order, removeItem, cartQuantity }) => {
     return (
-        <div class="container mb-5" style={{background:'white',marginTop:"10px"}}>
-            <div class="d-flex row flex-column m-2 justify-content-start flex-md-row align-items-start  ">
-
+        <div className="container mb-5" style={{ background: 'white', marginTop: "10px" }}>
+            <div className="m-2">
                 <h3>My Cart: {!order.items.length ? 'no items within the cart' : null}</h3>
-                <div class="col-md-7 mx-md-2 p-0 ">
-                    
-                    {AddItem.map(myItem =>
-                        <div class="cart-item p-3  mb-2 ">
-                            <div class=" d-flex flex-row ">
-                                <img class="img-fluid col-2 py-2" src={`images/${myItem.image}.jpeg`} alt="" />
-                                <div class="col-6">
-                                    <h5>{myItem.brand}</h5>
-                                    <h6>{myItem.name}</h6>
-                                    <h6>Quantity: {myItem.quantity}</h6>
-                                    <p>Price : ${myItem.price}</p>
-                                    <div class="d-flex">
-                                        <input type="radio" class="bg-danger" name="color" id="red" />RED
-                                        <input type="radio" class="bg-primary" name="color" id="blue" />BLUE
-                                        <input type="radio" class="bg-black" name="color" id="black" />BLACK
+
+                <div className="d-flex flex-column flex-md-row">
+                    <div className="col-12 col-md-7 mx-md-2 p-0">
+                        {AddItem.map(myItem => (
+                            <div className="cart-item p-3 mb-3 border rounded" key={myItem.id} style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
+                                <div className="d-flex align-items-center flex-column flex-md-row">
+                                    <div className="d-flex justify-content-center col-12 col-md-4 py-2">
+                                        <img
+                                            className="img-fluid cartImg"
+                                            src={`images/${myItem.image}.png`}
+                                            alt={myItem.name}
+                                            style={{ width: '100%', height: 'auto', maxHeight: '300px', objectFit: 'contain' }}
+                                        />
+                                    </div>
+                                    <div className="col-12 col-md-5 d-flex flex-column justify-content-between">
+                                        <div>
+                                            <h5 className="mb-1">{myItem.brand}</h5>
+                                            <h6 className="mb-2">{myItem.name}</h6>
+                                            <div className="d-flex align-items-center justify-content-start mb-2">
+                                                <h6 className="me-2">Quantity:</h6>
+                                                <select
+                                                    className="form-select w-auto"
+                                                    value={myItem.quantity}
+                                                    onChange={(e) => cartQuantity(e.target.value, myItem)}
+                                                >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                            <p className="mb-0">Price: <strong>${myItem.price}</strong></p>
+                                            <div className="d-flex flex-wrap gap-1 mb-2">
+                                                <input type="radio" name={`color-${myItem.id}`} id={`red-${myItem.id}`} />
+                                                <label htmlFor={`red-${myItem.id}`}>RED</label>
+                                                <input type="radio" name={`color-${myItem.id}`} id={`blue-${myItem.id}`} />
+                                                <label htmlFor={`blue-${myItem.id}`}>BLUE</label>
+                                                <input type="radio" name={`color-${myItem.id}`} id={`black-${myItem.id}`} />
+                                                <label htmlFor={`black-${myItem.id}`}>BLACK</label>
+                                            </div>
+                                        </div>
+                                        <button
+                                            className="btn btn-danger w-100 mt-2"
+                                            onClick={() => removeItem(myItem)}
+                                            title="Remove item"
+                                            style={{
+                                                borderRadius: '5px',
+                                                padding: '10px 0',
+                                                fontSize: '1.1rem',
+                                                fontWeight: 'bold'
+                                            }}
+                                        >
+                                            Remove Item
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    Quantity
-                                    <select name="selectmenu" id=" selectid " value={myItem.quantity} onChange={(e) => cartQuantity(e.target.value, myItem)}>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
+                            </div>
+                        ))}
+                    </div>
 
+                    {order.items.length ? (
+                        <div style={{height:"300px"}} className="col-12 col-md-4 order d-flex flex-grow flex-column p-3 mx-md-2 mt-3 mt-md-0">
+                            <h4>Order Details</h4>
+                            <div className="d-flex flex-column">
+                                <div className="py-1 d-flex justify-content-between">
+                                    <span className="billing-item" style={{ fontSize: '0.9rem' }}>Cart Quantity</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>{order.totalItems}</span>
                                 </div>
-                                <div onClick={()=>removeItem(AddItem)}
-                                    data-bs-target="#removemyModal"><i class="bi bi-x-circle-fill"></i>
-
+                                <div className="py-1 d-flex justify-content-between">
+                                    <span className="billing-item" style={{ fontSize: '0.9rem' }}>Item Cost</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${order.totalCost.toFixed(2)}</span>
+                                </div>
+                                <div className="py-1 d-flex justify-content-between">
+                                    <span className="billing-item" style={{ fontSize: '0.9rem' }}>Ship</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${order.shipping.toFixed(2)}</span>
+                                </div>
+                                <div className="py-1 d-flex justify-content-between">
+                                    <span className="billing-item" style={{ fontSize: '0.9rem' }}>Discount</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${order.discount.toFixed(2)}</span>
+                                </div>
+                                <div className="py-1 d-flex justify-content-between">
+                                    <span className="billing-item" style={{ fontSize: '0.9rem' }}>Total</span>
+                                    <span className="billing-cost" style={{ fontSize: '0.9rem' }}>${(order.totalCost + order.shipping - (order.discount * order.totalCost / 100)).toFixed(2)}</span>
                                 </div>
                             </div>
+                            <Link to="/checkout.html" className="button btn py-2 btn-primary mt-4">Buy-now</Link>
                         </div>
-
-                    )
-                    }
+                    ) : null}
                 </div>
-                {order.items.length ? <div class="col-md-4 order d-flex flex-grow flex-column p-3 ">
-                    <h4>Order detail</h4>
-                    <div class="d-flex py-2 flex-row align-items-start ">
-                        <input type="text " class="form-control" placeholder="promo code" />
-                        <button class="btn btn-primary ">Apply</button>
-                    </div>
-                    <div class="d-flex py-2 justify-content-between">
-                        <span class="billing-item">Cart Quantity</span>
-                        <span class="billing-cost">{order.totalItems}</span>
-                    </div>
-                    <div class="d-flex py-2 justify-content-between">
-                        <span class="billing-item">Item Cost</span>
-                        <span class="billing-cost">${order.totalCost}</span>
-                    </div>
-                    <div class="d-flex py-2 justify-content-between">
-                        <span class="billing-item">Ship</span>
-                        <span class="billing-cost">${order.shipping}</span>
-                    </div>
-                    <div class="d-flex py-2 justify-content-between">
-                        <span class="billing-item">Discount</span>
-                        <span class="billing-cost">${order.discount}</span>
-                    </div>
-                    <div class="d-flex py-2 justify-content-between">
-                        <span class="billing-item">Total</span>
-                        <span class="billing-cost">${order.totalCost + order.shipping - order.discount * order.totalCost / 100}</span>
-                    </div>
-                    <Link to="/checkout.html" class="button btn py-2 btn-primary">Buy-now</Link>
-                </div> : null}
-
             </div>
         </div>
+    );
+};
 
-    )
-}
 export default Cart;

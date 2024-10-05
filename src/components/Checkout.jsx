@@ -3,6 +3,7 @@ import { useState } from "react";
 const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
     const blankAddress = { fName: "", lName: "", phone: '', address2: '', address1: '', zipcode: '', state: '', country: '' }
     const [address, setAddress] = useState(blankAddress)
+const[itemCount,setItemsCount]=useState(order.totalItems)
     const validateAddress = (address) => {
         if (!address.fName || !address.lName || !address.phone || !address.zipcode || !address.address1 || !address.country || !address.state);
         //  { alert("enter a valid address") }/
@@ -23,7 +24,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Your cart</span>
-                        <span class="badge p-2 bg-success rounded-pill">{order.totalItems}</span>
+                        <span class="badge p-2 bg-success rounded-pill">{itemCount}</span>
                     </h4>
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -38,7 +39,7 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
                             <div class="text-success">
                                 <h6 class="my-0">Shipping Charge</h6>
                             </div>
-                           {order!=null?( <span class="text-success">₹={order.shipping}</span>):"₹0"}
+                           {order!=null?( <span class="text-success">₹{order.shipping}</span>):"₹0"}
                         </li>
                         <li class="list-group-item d-flex justify-content-between bg-light">
                             <div class="text-secondary">
@@ -180,7 +181,10 @@ const Checkout = ({ order, user, addAddress, setShipAddress, placeOrder }) => {
 
                         <button class="btn btn-primary btn-lg btn-block flex col-12" type="submit"
                             fdprocessedid="h0gg9n">Add Address</button>
-                        <button class="btn btn-success mt-4 btn-lg btn-block flex col-12 w-100" onClick={e => placeOrder()}
+                        <button class="btn btn-success mt-4 btn-lg btn-block flex col-12 w-100" onClick={e => {placeOrder()
+setItemsCount(0);}
+
+                        }
                             fdprocessedid="h0gg9n">Continue to Checkout</button>
                     </form>
                 </div>
